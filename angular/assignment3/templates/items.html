@@ -1,5 +1,5 @@
 <div class="form-group">
-	<h3 ng-hide="isEmpty">{{length}} items found</h3>
+	<h3 ng-show="length">{{length}} items found</h3>
 	<ul>
 		<li ng-repeat="item in items">
 			<div class="row">
@@ -15,5 +15,5 @@
 			</div>
 		</li>
 	</ul>
-	<span ng-if="isEmpty" class="empty">Nothing Found</span>
+	<span ng-if="!length" class="empty">Nothing Found</span>
 </div>

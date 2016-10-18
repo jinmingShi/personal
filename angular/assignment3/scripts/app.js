@@ -24,18 +24,15 @@ function NarrowItDownController(MenuSearchService) {
 	var ctrl = this;
 	ctrl.found = "";
 	ctrl.length = 0;
-	ctrl.isEmpty = true;
 	ctrl.find = function(input) {
 		MenuSearchService.getMatchedMenuItems(input)
 		.then(function(response) {
 			ctrl.found = response;
 			ctrl.length = ctrl.found.length;
-			ctrl.isEmpty = false;
 		})
 		.catch(function(error) {
 			ctrl.found="";
 			ctrl.length=0;
-			ctrl.isEmpty = true;
 			//console.log("error happens in controller");
 		});
 	};
