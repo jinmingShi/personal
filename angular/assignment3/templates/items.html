@@ -1,0 +1,19 @@
+<div class="form-group">
+	<h3 ng-hide="isEmpty">{{length}} items found</h3>
+	<ul>
+		<li ng-repeat="item in items">
+			<div class="row">
+				<div class="col-md-5">
+					<span>{{$index + 1 + " name: " + item.name}}</span><br>
+					<span>{{"short name: " + item.short_name}}</span><br>
+					<span>{{"description: " + item.description}}</span>
+				</div>
+				<div class="col-md-4">
+					<button class="btn btn-primary" ng-click="onremove({index: '$index'})">
+				            Don't want this one!</button>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<span ng-if="isEmpty" class="empty">Nothing Found</span>
+</div>
