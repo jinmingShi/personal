@@ -1,0 +1,20 @@
+<div>
+  <a ui-sref="home" class="link">Home</a> <span> > </span>
+  <span>Categories</span>
+</div>
+<!-- <div>
+  <a ui-sref="home" class="link">Home</a> <span> > </span>
+  <span><a ui-sref="categories" class="link">Categories</a></span>
+  <span> > items menu</span>
+</div> -->
+<div class="group">
+	<div class="row">
+		<div class="col-md-4">
+			<categories menu="cs.menu">
+			</categories>
+		</div>
+		<div class="col-md-5">
+			<ui-view></ui-view>
+		</div>
+	</div>
+</div>
