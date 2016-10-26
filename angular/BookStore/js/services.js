@@ -1,0 +1,1 @@
+//create a service here to implement loading booklist data in booklistCtrl, reduce the coupling

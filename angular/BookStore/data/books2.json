@@ -1,0 +1,15 @@
+[{
+    "bookId":"1",
+    "index": "1",
+    "name": "AngularJS",
+    "author": "Author1",
+    "pubTime": "2016-01-01",
+    "price":"35"
+}, {
+    "bookId":"2",
+    "index": "2",
+    "name": "DOM Manipulation",
+    "author": "Author2",
+    "pubTime": "2016-01-02",
+    "price":"35"
+}]

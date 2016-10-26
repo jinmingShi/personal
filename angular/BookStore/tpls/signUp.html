@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">SignUp</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="form-horizontal" name="signUpForm" ng-controller="signUpCtrl">
+                        <div class="form-group">
+                            <label for="uemail" class="control-label col-md-2 col-md-offset-2">Email</label>
+                            <div class="col-md-5">
+                                <input type="email" name="uemail" id="uemail" class="form-control" ng-model="user.name" placeholder="Enter email address">
+                            </div>
+                            <div class="col-md-3">
+                                <span class="form-control error" ng-if="signUpForm.uemail.$invalid && signUpForm.uemail.$touched">Invalid Username</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="upassword" class="control-label col-md-2 col-md-offset-2">Password</label>
+                            <div class="col-md-5">
+                                <input type="password" name="upassword" id="upassword" class="form-control" ng-model="user.password" placeholder="please at least include one uppercase">
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label for="upassword2" class="control-label col-md-2 col-md-offset-2">Password</label>
+                            <div class="col-md-5">
+                                <input type="password" name="password2" id="upassword2" class="form-control" ng-model="user.password2" compare="user.password" placeholder="please at least include one uppercase">
+                            </div>
+                            <div class="col-md-3">
+                                <span class="form-control error" ng-if="signUpForm.password2.$error.compare  && signUpForm.password2.$touched">Password Incorrect</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-4 col-md-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox">Keep Login
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-8">
+                                <input type="submit" value="SignUp" ng-click="signUp()" ng-disabled="signUpForm.$invalid || signUpForm.$pristine" class="btn btn-default">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
