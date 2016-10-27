@@ -1,10 +1,22 @@
 /**
  * book list implementation
  * @type {[type]}
- */
-var bookListModule = angular.module("BookListModule", []);
+ **/
 
-bookListModule.controller('BookListCtrl', function($scope, $http, $state, $stateParams) {
+(function() {
+angular.module("BookListModule", [])
+.controller('BookListCtrl', BookListCtrl);
+
+angular.module("BookDetailModule", [])
+.controller("BookDetailCtrl", BookDetailCtrl);
+
+angular.module("signUpModule", ["ui.router", 'ngGrid'])
+.controller("loginCtrl", loginCtrl)
+.directive("compare", compare)
+.controller("signUpCtrl", signUpCtrl);
+
+BookListCtrl.$inject = ["$scope", "$http", "$state", "$stateParams"];
+function BookListCtrl($scope, $http, $state, $stateParams) {
     $scope.filterOptions = {
         filterText: "",
         useExternalFilter: true
@@ -111,25 +123,23 @@ bookListModule.controller('BookListCtrl', function($scope, $http, $state, $state
         pagingOptions: $scope.pagingOptions,
         filterOptions: $scope.filterOptions
     };
-});
+}
 
 
 /**
  * 
  * book details
  * @type {[type]}
- */
+ **/
 
-var bookDetailModule = angular.module("BookDetailModule", []);
-bookDetailModule.controller('BookDetailCtrl', function($scope, $http, $state, $stateParams) {
+BookDetailCtrl.$inject = ["$scope", "$http", "$state", "$stateParams"];
+function BookDetailCtrl($scope, $http, $state, $stateParams) {
     console.log($stateParams);
-
     //to be continue: use $http to get data from the end, implement the examples totally.
-});
+};
 
-var signUpModule = angular.module("signUpModule", ["ui.router", 'ngGrid']);
-
-signUpModule.controller("signUpCtrl", ["$scope", "$rootScope", "$state", function($scope, $rootScope, $state) {
+signUpCtrl.$inject = ["$scope", "$rootScope", "$state"];
+function signUpCtrl($scope, $rootScope, $state) {
     $scope.user = {};
     $rootScope.users=[];
     $scope.signUp=function() {
@@ -138,9 +148,10 @@ signUpModule.controller("signUpCtrl", ["$scope", "$rootScope", "$state", functio
             $state.go("index");
         }
     };
-}]);
+}
 
-signUpModule.controller("loginCtrl", ["$scope","$state","$rootScope", function($scope, $state, $rootScope) {
+loginCtrl.$inject = ["$scope","$state","$rootScope"];
+function loginCtrl($scope, $state, $rootScope) {
     $scope.login=function(bookTypeid) {
         var user=$scope.user;
         if (user) {
@@ -154,10 +165,9 @@ signUpModule.controller("loginCtrl", ["$scope","$state","$rootScope", function($
             alert("Please SignUp");
         }
     };
-}]);
+}
 
-
-signUpModule.directive("compare", function() {
+function compare() {
     return {
         strict: 'AE',
         scope: {
@@ -173,4 +183,6 @@ signUpModule.directive("compare", function() {
             });
         }
     };
-});
+}
+})();
+
