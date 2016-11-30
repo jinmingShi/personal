@@ -9,7 +9,6 @@
    - Implemented nested views using ui-router
    - Used ng-grid to implement dynamic grids
    - Implemented add button to input new book  
-    RouteConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
     
 2. Some module folds such as [module 3](https://jinmingshi.github.io/project/angular%20demo/modules/assignment3/index.html) uses $http, directives implementing singleton.    
    
