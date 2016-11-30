@@ -1,6 +1,6 @@
 {
   "name": "Project",
   "tagline": "",
-  "body": "# project-demo\r\nHere are some project-demos helping me understand some concepts about js and angularjs  \r\n##AngularJS\r\nAngular fold is some angular code using service, directives, ui-router library etc..\r\n\r\nJavascript fold holds some snippets of js code, help illustrate core concepts such as closure,\r\ninheritance, scope, this key word etc...",
+  "body": "# project\r\n###some projects help me understand some concepts about JS and AngularJS \r\n\r\n***\r\n\r\n1. Angular fold contains a [BookStore](https://jinmingshi.github.io/project/angular%20demo/BookStore/#/index) using service, directives, ui-router library etc...\r\n###Features:\r\n   - Implemented Login Form and Signup Form\r\n   - Implemented nested views using ui-router\r\n   - Used ng-grid to implement dynamic grids\r\n   - Implemented add button to input new book  \r\n   \r\n2. Some module folds such as [module 3](https://jinmingshi.github.io/project/angular%20demo/modules/assignment3/index.html) uses $http, directives implementing singleton.    \r\n   \r\n3. [restaurant ](https://jinmingshi.github.io/project/restaurant/index.html) is a simple HTML5 and BootStrap3 application. Implemented drop-down menu, nav-bar, reservation and feedback form.   ",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
